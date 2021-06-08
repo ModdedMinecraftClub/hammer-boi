@@ -33,16 +33,3 @@ client.on('guildMemberAdd', async (member) => {
     }
   }
 });
-
-client.on('message', async (message) => {
-  if (message.content !== '.cleanup') {
-    return;
-  }
-
-  const members = await message.guild.members.fetch();
-  const guildMembers = members.values();
-
-  for (const gm of guildMembers) {
-    console.log(gm.id);
-  }
-});
