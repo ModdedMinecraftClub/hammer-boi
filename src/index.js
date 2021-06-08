@@ -18,8 +18,7 @@ client.on('guildMemberAdd', async (member) => {
 
   for (const pattern of patterns) {
     if (
-      member.displayName.toLowerCase().includes(pattern) ||
-      member.nickname.toLowerCase().includes(pattern)
+      member.displayName.toLowerCase().includes(pattern)
     ) {
       await member.ban();
 
