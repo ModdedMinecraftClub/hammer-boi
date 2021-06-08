@@ -14,8 +14,6 @@ client.once('ready', () => {
 client.login(config.token);
 
 client.on('guildMemberAdd', async (member) => {
-  console.log(member.displayName);
-
   const patterns = config.patterns;
 
   for (const pattern of patterns) {
