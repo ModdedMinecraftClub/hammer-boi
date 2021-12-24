@@ -6,6 +6,7 @@ const client = new Discord.Client({
     intents: ['GUILD_MEMBERS', 'GUILD_MESSAGES', 'GUILDS']
   }
 });
+const patterns = config.patterns;
 
 client.once('ready', () => {
   console.log('Bot is ready.');
@@ -14,8 +15,6 @@ client.once('ready', () => {
 client.login(config.token);
 
 client.on('guildMemberAdd', async (member) => {
-  const patterns = config.patterns;
-
   for (const pattern of patterns) {
     if (
       member.displayName.toLowerCase().includes(pattern)
